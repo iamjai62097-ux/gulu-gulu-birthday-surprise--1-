@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
+  <title>Happy Birthday, Gulu Gulu! ❤️</title>
+  <meta name="description" content="A romantic, mobile-first birthday surprise website with animations, love letter, photo memories gallery, music player, and sweet surprises." />
+  <meta name="theme-color" content="#1a0826" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  
+  <!-- OpenGraph / Social Sharing -->
+  <meta property="og:title" content="Happy Birthday, Gulu Gulu! ❤️" />
+  <meta property="og:description" content="A romantic birthday surprise created with love, music, memories, and forever promises." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Google Fonts for Romantic Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Pure CSS Stylesheet -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+  <!-- Ambient Animated Canvas for Floating Hearts, Sparkles & Petals -->
+  <canvas id="ambient-canvas" aria-hidden="true"></canvas>
+
+  <!-- Glowing Ambient Background Orbs -->
+  <div class="ambient-glow ambient-glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow ambient-glow-2" aria-hidden="true"></div>
+  <div class="ambient-glow ambient-glow-3" aria-hidden="true"></div>
+
+  <!-- Top Floating Navigation & Music Player Bar -->
+  <header class="top-nav-bar" role="banner">
+    <a href="#section-opening" class="brand-badge" data-target-section="section-opening" aria-label="Go to start">
+      <span class="heart-beat">❤️</span> Forever Yours
+    </a>
+
+    <!-- Quick Navigation Links -->
+    <nav class="nav-links" aria-label="Surprise sections">
+      <button class="nav-link-btn" data-target-section="section-opening">Start ✨</button>
+      <button class="nav-link-btn" data-target-section="section-celebration">Cake 🎂</button>
+      <button class="nav-link-btn" data-target-section="section-letter">Letter 💌</button>
+      <button class="nav-link-btn" data-target-section="section-gallery">Memories 📸</button>
+      <button class="nav-link-btn" data-target-section="section-surprise">Surprise 🎁</button>
+      <button class="nav-link-btn" data-target-section="section-final">Forever ❤️</button>
+    </nav>
+
+    <!-- Music Player & Ambient Action Buttons -->
+    <div class="music-player-controls">
+      <button id="music-toggle-btn" class="music-btn" aria-label="Toggle Romantic Music">
+        <span class="equalizer-bars" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </span>
+        <span id="music-btn-text">Romantic Music</span>
+      </button>
+
+      <div class="nav-actions">
+        <button id="btn-toggle-sparkles" class="icon-btn active" title="Toggle Floating Sparkles" aria-label="Toggle Sparkles">✨</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Surprise Journey Content Wrapper -->
+  <main class="main-wrapper" role="main">
+
+    <!-- ====================================================================
+         STAGE 1: Opening Screen
+         ==================================================================== -->
+    <section id="section-opening" class="surprise-section" aria-labelledby="opening-title-text">
+      <div class="opening-content">
+        <div class="section-tag">🌹 A Special Gift Made For You</div>
+        <h1 id="opening-title-text" class="opening-title">Hey Gulu Gulu ❤️</h1>
+        <p id="opening-subtitle-text" class="opening-subtitle">Someone has a special surprise just for you...</p>
+
+        <!-- Animated 3D Gift Box -->
+        <div id="opening-gift-box" class="gift-box-wrapper" title="Tap to open surprise!" role="button" tabindex="0" aria-label="Open your surprise gift box">
+          <div class="gift-box-aura"></div>
+          <div class="gift-box-container">
+            <!-- Box Lid with Bow -->
+            <div class="gift-box-lid">
+              <div class="gift-ribbon-vertical"></div>
+              <div class="gift-bow">
+                <div class="bow-loop bow-left"></div>
+                <div class="bow-loop bow-right"></div>
+                <div class="bow-center"></div>
+              </div>
+            </div>
+            <!-- Box Body -->
+            <div class="gift-box-body">
+              <div class="gift-ribbon-vertical"></div>
+              <div class="gift-ribbon-horizontal"></div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <button id="btn-open-surprise" class="btn-primary" aria-label="Open Your Surprise">
+            <span>Open Your Surprise</span>
+            <span>✨</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         STAGE 2: Birthday Celebration & Interactive Cake
+         ==================================================================== -->
+    <section id="section-celebration" class="surprise-section" aria-labelledby="birthday-headline-text">
+      <div class="celebration-container">
+        <div class="section-tag">🎂 It's Your Special Day</div>
+        <h2 id="birthday-headline-text" class="birthday-headline">Happy Birthday, Gulu Gulu! 🎂</h2>
+        <p class="birthday-subtext">Today the world celebrates the most gorgeous, caring, and radiant soul in the entire universe.</p>
+
+        <!-- Animated Birthday Cake with Candles -->
+        <div id="birthday-cake-wrapper" class="cake-wrapper" title="Tap the cake to blow out the candles!" role="button" tabindex="0" aria-label="Birthday cake. Tap to blow out candles.">
+          <div class="cake-plate"></div>
+
+          <!-- Bottom Tier -->
+          <div class="cake-tier cake-bottom">
+            <div class="frosting-drips"></div>
+            <div class="cake-decorations">
+              <span class="cake-flower">🌸</span>
+              <span class="cake-flower">🍓</span>
+              <span class="cake-flower">🌸</span>
+            </div>
+          </div>
+
+          <!-- Middle Tier -->
+          <div class="cake-tier cake-middle">
+            <div class="frosting-drips"></div>
+            <div class="cake-decorations">
+              <span class="cake-flower">✨</span>
+              <span class="cake-flower">💖</span>
+              <span class="cake-flower">✨</span>
+            </div>
+          </div>
+
+          <!-- Top Tier -->
+          <div class="cake-tier cake-top">
+            <div class="frosting-drips"></div>
+            <div class="cake-decorations">
+              <span class="cake-flower">👑</span>
+            </div>
+          </div>
+
+          <!-- Candles Row -->
+          <div class="candles-row" aria-label="Candles">
+            <div class="candle">
+              <div class="candle-wick"></div>
+              <div class="candle-flame"></div>
+              <div class="candle-smoke"></div>
+            </div>
+            <div class="candle">
+              <div class="candle-wick"></div>
+              <div class="candle-flame"></div>
+              <div class="candle-smoke"></div>
+            </div>
+            <div class="candle">
+              <div class="candle-wick"></div>
+              <div class="candle-flame"></div>
+              <div class="candle-smoke"></div>
+            </div>
+          </div>
+        </div>
+
+        <p id="cake-prompt-text" class="cake-prompt">
+          <span>🕯️</span> Tap cake or make a wish to blow out the candles! <span>✨</span>
+        </p>
+
+        <!-- Celebratory Loving Stats -->
+        <div class="celebration-stats">
+          <div class="stat-card">
+            <div class="stat-number">∞</div>
+            <div class="stat-label">Days Loving You</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">10,000+</div>
+            <div class="stat-label">Smiles You Inspired</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">My Favorite Person</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">Endless</div>
+            <div class="stat-label">Dreams Ahead</div>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+          <button id="btn-blow-candles" class="btn-secondary" aria-label="Blow out candles">
+            <span>Blow Out Candles!</span> <span>🕯️💨</span>
+          </button>
+          <button class="btn-primary" data-target-section="section-letter" aria-label="Read love letter">
+            <span>Read My Heart's Letter</span> <span>💌</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         STAGE 3: Romantic Love Letter
+         ==================================================================== -->
+    <section id="section-letter" class="surprise-section" aria-labelledby="letter-section-heading">
+      <div class="letter-section-container">
+        <div class="section-tag">💌 From My Heart To Yours</div>
+        <h2 id="letter-section-heading" class="birthday-headline" style="font-size: clamp(2rem, 4.5vw, 3.2rem);">A Love Letter Just For You</h2>
+        <p class="birthday-subtext">Click the envelope seal to open and read what my heart always whispers.</p>
+
+        <!-- 3D Romantic Envelope -->
+        <div class="envelope-wrapper">
+          <div id="romantic-envelope" class="envelope" role="button" tabindex="0" aria-label="Romantic Love Letter Envelope. Click to open.">
+            <!-- Envelope Flaps & 3D Folds -->
+            <div class="envelope-front-folds">
+              <div class="envelope-flap-top"></div>
+              <div class="envelope-pocket"></div>
+            </div>
+
+            <!-- Wax Seal Button -->
+            <div id="wax-seal-btn" class="wax-seal" title="Break the wax seal" aria-label="Open wax seal">
+              <span>❤️</span>
+            </div>
+
+            <!-- The Romantic Letter Sheet Inside -->
+            <article class="letter-sheet" aria-live="polite">
+              <div class="letter-watermark" aria-hidden="true">❤️</div>
+              <h3 id="letter-greeting-text" class="letter-header">Gulu Gulu ❤️,</h3>
+              <div id="letter-body-text" class="letter-body">
+                <!-- Typewriter text inserted here by script.js -->
+                Click the envelope seal to reveal your love letter...
+              </div>
+              <p id="letter-signoff-text" style="margin-top: 18px; font-family: var(--font-serif); font-size: 0.95rem; color: #6b1437;">
+                Forever & Always With All My Love,
+              </p>
+              <div id="letter-author-text" class="letter-signature">
+                Yours Forever
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Controls for Typewriter -->
+        <div class="letter-controls">
+          <button id="btn-skip-typewriter" class="btn-secondary" aria-label="Read Instantly">
+            <span>Read Instantly</span> <span>⚡</span>
+          </button>
+          <button id="btn-replay-typewriter" class="btn-secondary" aria-label="Replay Letter">
+            <span>Replay Typing</span> <span>📜</span>
+          </button>
+          <button class="btn-primary" data-target-section="section-gallery" aria-label="Proceed to Memories">
+            <span>Walk Down Memory Lane</span> <span>📸</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         STAGE 4: Memories Gallery
+         ==================================================================== -->
+    <section id="section-gallery" class="surprise-section" aria-labelledby="gallery-section-heading">
+      <div class="gallery-section-container">
+        <div class="gallery-header-row">
+          <div class="gallery-title-box">
+            <div class="section-tag">📸 Our Beautiful Journey</div>
+            <h2 id="gallery-section-heading" class="birthday-headline" style="font-size: clamp(2rem, 4.5vw, 3.2rem); text-align: left;">
+              Our Sweetest Memories
+            </h2>
+            <p style="color: var(--text-light); font-size: 0.95rem;">Every picture holds a thousand heartbeats and smiles we shared.</p>
+          </div>
+
+          <div class="gallery-actions">
+            <label for="photo-file-input" class="upload-btn-label">
+              <span>Add Your Own Photo</span> <span>🌸</span>
+            </label>
+            <input type="file" id="photo-file-input" accept="image/*" aria-label="Upload personal memory photo" />
+          </div>
+        </div>
+
+        <!-- Memories Polaroid Grid -->
+        <div id="memories-grid-container" class="memories-grid" role="region" aria-label="Memories photo gallery">
+          <!-- Populated by script.js -->
+        </div>
+
+        <div style="margin-top: 45px;">
+          <button class="btn-primary" data-target-section="section-surprise" aria-label="Proceed to special surprise">
+            <span>One More Special Surprise...</span> <span>🎁</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         STAGE 5: Special Surprise Box & Romantic Love Coupons
+         ==================================================================== -->
+    <section id="section-surprise" class="surprise-section" aria-labelledby="surprise-section-heading">
+      <div class="surprise-box-container">
+        <div class="section-tag">🎀 Unbox Your Special Gift</div>
+        <h2 id="surprise-section-heading" class="birthday-headline" style="font-size: clamp(2rem, 4.5vw, 3.2rem);">
+          A Secret Wish For You
+        </h2>
+        <p class="birthday-subtext">I wanted to give you something no store in the world could ever sell.</p>
+
+        <!-- Interactive Mystery Gift Chest -->
+        <div id="mystery-gift-chest" class="mystery-gift-chest" role="button" tabindex="0" aria-label="Tap to unlock your surprise vouchers">
+          <div class="chest-box">
+            <span class="chest-icon">💎</span>
+            <span class="chest-text">Tap to Unwrap</span>
+          </div>
+        </div>
+
+        <!-- Revealed Love Coupons & Romantic Message -->
+        <div id="coupons-reveal-area" class="coupons-reveal-area">
+          <div class="special-message-banner">
+            <blockquote id="special-message-quote" class="special-message-quote">
+              "My heart is, and will always be, entirely yours. Today, tomorrow, and through all our tomorrows together."
+            </blockquote>
+            <div id="special-message-author" class="special-message-author">— Yours Forever</div>
+          </div>
+
+          <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: #fff; margin-bottom: 20px;">
+            Your Lifetime Romantic Coupons 🎟️✨
+          </h3>
+
+          <div class="coupons-grid">
+            <!-- Coupon 1 -->
+            <div class="coupon-card">
+              <span class="coupon-tag">Never Expires</span>
+              <span class="coupon-icon">🫂</span>
+              <h4 class="coupon-title">Infinite Warm Hugs</h4>
+              <p class="coupon-desc">Redeemable anytime, anywhere. Valid for unconditional warmth whenever you need it.</p>
+              <button class="coupon-redeem-btn">Redeem Now ❤️</button>
+            </div>
+
+            <!-- Coupon 2 -->
+            <div class="coupon-card">
+              <span class="coupon-tag">VIP Access</span>
+              <span class="coupon-icon">🌹</span>
+              <h4 class="coupon-title">Dream Date Night</h4>
+              <p class="coupon-desc">Your favorite restaurant, your favorite dessert, candlelight, and royal treatment.</p>
+              <button class="coupon-redeem-btn">Redeem Now ❤️</button>
+            </div>
+
+            <!-- Coupon 3 -->
+            <div class="coupon-card">
+              <span class="coupon-tag">Wildcard</span>
+              <span class="coupon-icon">✨</span>
+              <h4 class="coupon-title">Win Any Debate Pass</h4>
+              <p class="coupon-desc">Play this card and I will immediately concede that you were 100% right all along.</p>
+              <button class="coupon-redeem-btn">Redeem Now ❤️</button>
+            </div>
+
+            <!-- Coupon 4 -->
+            <div class="coupon-card">
+              <span class="coupon-tag">Pure Bliss</span>
+              <span class="coupon-icon">💆‍♀️</span>
+              <h4 class="coupon-title">Relaxing Spa Night</h4>
+              <p class="coupon-desc">Head & shoulder massage, scented candles, soft music, and full relaxation.</p>
+              <button class="coupon-redeem-btn">Redeem Now ❤️</button>
+            </div>
+
+            <!-- Coupon 5 -->
+            <div class="coupon-card">
+              <span class="coupon-tag">Adventure</span>
+              <span class="coupon-icon">🚗</span>
+              <h4 class="coupon-title">Midnight Drive & Ice Cream</h4>
+              <p class="coupon-desc">Windows down, your favorite playlist on full blast, and sweet midnight treats.</p>
+              <button class="coupon-redeem-btn">Redeem Now ❤️</button>
+            </div>
+
+            <!-- Coupon 6 -->
+            <div class="coupon-card">
+              <span class="coupon-tag">Eternal</span>
+              <span class="coupon-icon">💍</span>
+              <h4 class="coupon-title">Forever Love & Loyalty</h4>
+              <p class="coupon-desc">A lifetime promise to support, cherish, respect, and adore you every single day.</p>
+              <button class="coupon-redeem-btn">Redeem Now ❤️</button>
+            </div>
+          </div>
+
+          <div style="margin-top: 40px;">
+            <button class="btn-primary" data-target-section="section-final" aria-label="Go to final screen">
+              <span>To Our Forever & Beyond</span> <span>❤️</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         STAGE 6: Final Screen ("I Love You Forever ❤️")
+         ==================================================================== -->
+    <section id="section-final" class="surprise-section" aria-labelledby="final-title-text">
+      <div class="final-screen-container">
+        <!-- Giant Glowing Beating Heart -->
+        <div class="giant-heart-wrapper" aria-hidden="true">
+          <span class="giant-heart">❤️</span>
+        </div>
+
+        <h2 id="final-title-text" class="final-title">I Love You Forever ❤️</h2>
+
+        <p class="final-message">
+          No matter how many candles are on the cake, you will always be the brightest, purest, and most precious light in my universe. Thank you for filling my life with smiles, warmth, and love that words could never capture. Happy Birthday, my whole world! 🌟🎂
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Mobile Bottom Quick Chapter Navigation Dock (Visible on mobile/tablet) -->
+  <nav class="mobile-bottom-dock" aria-label="Mobile quick chapter navigation">
+    <button class="mobile-dock-btn active" data-target-section="section-opening" aria-label="Go to Start">
+      <span class="dock-icon">✨</span>
+      <span class="dock-text">Start</span>
+    </button>
+    <button class="mobile-dock-btn" data-target-section="section-celebration" aria-label="Go to Cake">
+      <span class="dock-icon">🎂</span>
+      <span class="dock-text">Cake</span>
+    </button>
+    <button class="mobile-dock-btn" data-target-section="section-letter" aria-label="Go to Love Letter">
+      <span class="dock-icon">💌</span>
+      <span class="dock-text">Letter</span>
+    </button>
+    <button class="mobile-dock-btn" data-target-section="section-gallery" aria-label="Go to Memories">
+      <span class="dock-icon">📸</span>
+      <span class="dock-text">Photos</span>
+    </button>
+    <button class="mobile-dock-btn" data-target-section="section-surprise" aria-label="Go to Surprise">
+      <span class="dock-icon">🎁</span>
+      <span class="dock-text">Surprise</span>
+    </button>
+    <button class="mobile-dock-btn" data-target-section="section-final" aria-label="Go to Forever">
+      <span class="dock-icon">❤️</span>
+      <span class="dock-text">Forever</span>
+    </button>
+  </nav>
+
+  <!-- ====================================================================
+       MODAL 1: Fullscreen Photo Lightbox
+       ==================================================================== -->
+  <div id="lightbox-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Photo Lightbox">
+    <div class="modal-card lightbox-card">
+      <button id="lightbox-close-btn" class="modal-close-btn" aria-label="Close Lightbox">✕</button>
+      <img id="lightbox-img" src="" alt="Enlarged Memory Photo" class="lightbox-img" />
+      <p id="lightbox-caption" class="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <!-- Pure Vanilla JavaScript -->
+  <script src="./script.js"></script>
+</body>
+</html>
